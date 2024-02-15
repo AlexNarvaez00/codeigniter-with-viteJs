@@ -8,7 +8,8 @@
 </head>
 
 <body>
-  <?= view_cell("ViteCell",["fileName"=>"resources/main.ts"]) ?>
+  <div id="app"></div>
+  <?= view_cell("ViteCell", ["fileName" => "resources/main.ts"]) ?>
 </body>
 
 </html>
