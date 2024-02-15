@@ -3,6 +3,7 @@ import path from "path";
 
 export default defineConfig({
   plugins: [],
+  publicDir: "./resources/public/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./resources"),
