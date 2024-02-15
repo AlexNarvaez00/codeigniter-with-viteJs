@@ -4,8 +4,8 @@ import path from "path";
 export default defineConfig({
   plugins: [],
   resolve: {
-  alias: {
-      "@": path.resolve(__dirname,"./resources")
-    }
-  }
+    alias: {
+      "@": path.resolve(__dirname, "./resources"),
+    },
+  },
 });
