@@ -2,9 +2,9 @@
 
 namespace App\Controllers\Images;
 
-use App\Controllers\BaseController;
+use CodeIgniter\RESTful\ResourcePresenter;
 
-class ImageController extends BaseController
+class ImageController extends ResourcePresenter
 {
     public function index()
     {
