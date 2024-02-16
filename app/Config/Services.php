@@ -3,6 +3,7 @@
 namespace Config;
 
 use CodeIgniter\Config\BaseService;
+use App\Services\ImageService;
 
 /**
  * Services Configuration file.
@@ -19,7 +20,7 @@ use CodeIgniter\Config\BaseService;
  */
 class Services extends BaseService
 {
-    /*
+  /*
      * public static function example($getShared = true)
      * {
      *     if ($getShared) {
@@ -29,4 +30,11 @@ class Services extends BaseService
      *     return new \CodeIgniter\Example();
      * }
      */
+  public static function imageService($getShared = true)
+  {
+    if ($getShared) {
+      return static::getSharedInstance('imageService');
+    }
+    return new ImageService();
+  }
 }
