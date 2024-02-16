@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <div id="app"></div>
+  <div id="app" data-props="<?= $data ?? json_encode([]) ?>"></div>
   <?= view_cell("ViteTagsCell", ["input" => "resources/main.ts"])  ?>
 </body>
 

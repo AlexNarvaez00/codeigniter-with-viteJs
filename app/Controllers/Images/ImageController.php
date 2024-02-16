@@ -4,6 +4,7 @@ namespace App\Controllers\Images;
 
 use App\Services\ImageService;
 use CodeIgniter\RESTful\ResourcePresenter;
+use Config\SPA;
 
 class ImageController extends ResourcePresenter
 {
@@ -16,6 +17,9 @@ class ImageController extends ResourcePresenter
 
   public function index()
   {
-    return view("images/index", ["title" => "Images | Index"]);
+    $images = $this->service
+      ->findByName("")
+      ->paginate(10, "default", 1);
+    return SPA::render("images/index", ["images" => $images]);
   }
 }

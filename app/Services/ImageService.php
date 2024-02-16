@@ -13,7 +13,7 @@ class ImageService
     $this->model = $model;
   }
 
-  public function findByName(string $name, int $page): Image
+  public function findByName(string $name): Image
   {
     return $this->model
       ->like("name", $name);
