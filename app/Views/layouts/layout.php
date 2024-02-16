@@ -5,11 +5,12 @@
   <title> <?= $title ?? "app"  ?> </title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <?= view_cell("ViteStylesCell") ?>
 </head>
 
 <body>
   <div id="app"></div>
-  <?= view_cell("ViteCell", ["fileName" => "resources/main.ts"]) ?>
+  <?= view_cell("ViteTagsCell", ["input" => "resources/main.ts"])  ?>
 </body>
 
 </html>
