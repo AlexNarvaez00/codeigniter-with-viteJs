@@ -4,6 +4,7 @@ namespace Config;
 
 use CodeIgniter\Config\BaseService;
 use App\Services\ImageService;
+use App\Services\ViteAssetsService;
 
 /**
  * Services Configuration file.
@@ -36,5 +37,14 @@ class Services extends BaseService
       return static::getSharedInstance('imageService');
     }
     return new ImageService();
+  }
+
+  public static function viteAssets($getShared = true)
+  {
+    if ($getShared) {
+      return static::getSharedInstance('viteAssets');
+    }
+
+    return new ViteAssetsService();
   }
 }
