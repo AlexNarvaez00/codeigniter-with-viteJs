@@ -8,6 +8,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
     base: env.VITE_BASE_PATH ?? "",
     publicDir: env.VITE_PUBLIC_DIR ?? "/public",
     build: {
+      manifest:true,
       rollupOptions: {
         input: env.VITE_INPUT_FILE ?? "index.html",
         output: {
