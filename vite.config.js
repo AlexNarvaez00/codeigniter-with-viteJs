@@ -1,27 +1,19 @@
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import path from "path";
 
 /** @type {import('vite').UserConfig} */
-export default defineConfig({
-  puglins: [],
-  publicDir: import.meta.env?.VITE_PUBLIC_DIR ?? "./app/Resources/public/",
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./app/Resources/"),
+export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
+  const env = loadEnv(mode, process.cwd(), "VITE_");
+  return {
+    base: env.VITE_BASE_PATH ?? "",
+    publicDir: env.VITE_PUBLIC_DIR ?? "/public",
+    build: {
+      rollupOptions: {
+        input: env.VITE_INPUT_FILE ?? "index.html",
+        output: {
+          dir: env.VITE_OUTPUT_DIR ?? "./dist",
+        },
+      },
     },
-  },
-  build: {
-    lib: {
-      entry: path.resolve(__dirname, "./app/Resources/main.js"),
-    },
-    manifest: true,
-    rollupOptions: {
-      input:
-        import.meta.env?.VITE_PUBLIC_DIR + "/main.js" ??
-        "./app/Resources/public/main.js",
-    },
-    output: {
-      dir: "./public/dist",
-    },
-  },
+  };
 });
