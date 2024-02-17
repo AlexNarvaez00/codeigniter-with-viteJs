@@ -145,4 +145,10 @@
 #--------------------------------------------------------------------
 # Vite config
 #--------------------------------------------------------------------
-#VITE_BASE_URL="http://localhost:5173"
+
+#VITE_BASE_PATH="/src"
+#VITE_BASE_URL="http://localhost:5173/"
+#VITE_PUBLIC_DIR=".${VITE_BASE_PATH}/public/"
+#VITE_INPUT_FILE=".${VITE_BASE_PATH}/main.js"
+#VITE_OUTPUT_DIR="./public/dist"
+
