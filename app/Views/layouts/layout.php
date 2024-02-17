@@ -10,8 +10,7 @@
 
 <body>
   <div id="app" data-props="<?= $data ?? json_encode([]) ?>"></div>
-    <?php # <?= view_cell("ViteReactCell") ?>
-  <?= view_cell("ViteTagsCell", ["input" => "@/main.js"])  ?>
+  <?= view_cell("ViteTagsCell", ["input" => "src/main.js"])  ?>
 </body>
 
 </html>

@@ -9,6 +9,7 @@ class ViteAssetsService
 
   public function __construct()
   {
-    $this->manifest = json_decode(file_get_contents(__DIR__ . "/../../public/dist/.vite/manifest.json"), true);
+    $json = file_get_contents(__DIR__ . "/../../public/dist/.vite/manifest.json");
+    $this->manifest = json_decode($json, true);
   }
 }

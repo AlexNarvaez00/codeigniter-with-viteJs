@@ -22,7 +22,7 @@ class ViteScriptCell extends Cell
     $this->fileName = $fileName;
     if ($this->isProduction) {
       $this->fileName = service("viteAssets")
-        ->manifest[$fileName]["file"];
+      ->manifest[$fileName]["file"];
     }
   }
 }

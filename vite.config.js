@@ -5,10 +5,9 @@ import path from "path";
 export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
   const env = loadEnv(mode, process.cwd(), "VITE_");
   return {
-    base: env.VITE_BASE_PATH ?? "",
     publicDir: env.VITE_PUBLIC_DIR ?? "/public",
     build: {
-      manifest:true,
+      manifest: true,
       rollupOptions: {
         input: env.VITE_INPUT_FILE ?? "index.html",
         output: {

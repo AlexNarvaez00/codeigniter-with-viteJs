@@ -17,9 +17,9 @@ class ImageController extends ResourcePresenter
 
   public function index()
   {
-    $images = $this->service
-      ->findByName("")
-      ->paginate(10, "default", 1);
-    return SPA::render("images/index", ["images" => $images]);
+    return SPA::render("images/index", ["images" => [
+      "Item 1",
+      "Item 2",
+    ]]);
   }
 }

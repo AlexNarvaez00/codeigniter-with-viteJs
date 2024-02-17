@@ -25,7 +25,8 @@ class ViteStylesCell extends Cell
     $manifest = service("viteAssets")->manifest;
     $styles = [];
     foreach ($manifest as $file) {
-      array_push($styles,...$file["css"]);
+      if (!array_key_exists("css", $file)) continue;
+      array_push($styles, ...$file["css"]);
     }
     return $styles;
   }
